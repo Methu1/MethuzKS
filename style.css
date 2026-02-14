@@ -89,4 +89,30 @@ nav {
 .video-info { padding: 20px; }
 .video-info h3 { color: #ff0000; }
 
+
 footer { background: #1a1a1a; text-align: center; padding: 30px; margin-top: 50px; }
+
+/* Logo සහ Photo එක එක පෙළට තැබීම */
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* Photo එක රවුම් කර පොඩි කිරීම */
+.nav-profile-img {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #ff0000; /* රතු පාට බෝඩරය */
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.5); /* ලස්සනට Glow වෙන්න */
+}
+
+/* Methuz KS අකුරු මෝස්තරය */
+.logo-text {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #ff0000;
+    letter-spacing: 1px;
+}

@@ -115,10 +115,7 @@ footer { background: #1a1a1a; text-align: center; padding: 30px; margin-top: 50p
     font-weight: 700;
     color: #ff0000;
     letter-spacing: 1px;
-}
 
-/* මොබයිල් ෆෝන් සඳහා විශේෂ වෙනස්කම් */
-@media (max-width: 600px) {
     nav {
         flex-direction: column; /* උඩ යට පේළියට සැකසීම */
         padding: 15px;
@@ -145,3 +142,4 @@ footer { background: #1a1a1a; text-align: center; padding: 30px; margin-top: 50p
         font-size: 1.8rem; /* මොබයිල් එකේදී පෙනෙන ප්‍රමාණය */
     }
 }
+

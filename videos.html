@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Methuz KS - My Gameplays</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            margin: 0;
+            background-color: #000;
+            color: white;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* පසුබිම් පින්තූරය සහ Blur එක */
+        .video-bg {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                        url('https://images8.alphacoders.com/115/1159892.jpg');
+            background-size: cover;
+            background-position: center;
+            filter: blur(10px);
+            z-index: -1;
+            transform: scale(1.1);
+        }
+
+        .video-page-container {
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .video-grid {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+
+        .video-card {
+            background: rgba(20, 20, 20, 0.8);
+            padding: 15px;
+            border-radius: 15px;
+            border: 2px solid #ff0000;
+            width: 100%;
+            max-width: 500px;
+            backdrop-filter: blur(5px);
+        }
+
+        iframe {
+            width: 100%;
+            height: 280px;
+            border-radius: 10px;
+            border: none;
+        }
+
+        .back-btn {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 10px 25px;
+            background: #ff0000;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="video-bg"></div>
+
+    <div class="video-page-container">
+        <h1 style="color: #ff0000; text-transform: uppercase;">Latest Gameplays</h1>
+        
+        <div class="video-grid">
+            <div class="video-card">
+                <iframe src="https://www.youtube.com/embed/kYR4fPafcUA" title="Exploring Kena" allowfullscreen></iframe>
+                <h3>Exploring the Magical World of Kena</h3>
+            </div>
+
+            <div class="video-card">
+                <iframe src="https://www.youtube.com/embed/zVBNQlUe104" title="Kena Part 1" allowfullscreen></iframe>
+                <h3>Kena: Bridge of Spirits - Part 1</h3>
+            </div>
+        </div>
+
+        <a href="index.html" class="back-btn">Go Back Home</a>
+    </div>
+
+</body>
+</html>

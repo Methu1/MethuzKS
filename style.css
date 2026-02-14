@@ -263,7 +263,7 @@ body {
         background: #cc0000;
         transform: scale(1.05);
     }
-body {
+    body {
     /* Replace with your actual image path */
     background-image: url('your-background-image.jpg'); 
     

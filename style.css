@@ -142,4 +142,42 @@ footer { background: #1a1a1a; text-align: center; padding: 30px; margin-top: 50p
         font-size: 1.8rem; /* මොබයිල් එකේදී පෙනෙන ප්‍රමාණය */
     }
 }
+/* මෙන්න මේ පේළිය අනිවාර්යයෙන්ම තියෙන්න ඕනේ */
+@media (max-width: 600px) {
+    
+    nav {
+        flex-direction: column; /* ලෝගෝ එකයි ලින්ක් ටිකයි උඩයි යටයි වැටෙනවා */
+        padding: 15px;
+        text-align: center;
+    }
+
+    .logo-container {
+        margin-bottom: 15px; /* ලෝගෝ එකයි මෙනු එකයි අතර පරතරය */
+        justify-content: center; /* ලෝගෝ එක මැදට ගැනීම */
+    }
+
+    .nav-links {
+        display: flex;
+        justify-content: center;
+        gap: 15px; 
+        margin-left: 0;
+        width: 100%; /* ලින්ක් ටික මැදට ගන්න උදව් වෙනවා */
+    }
+
+    .nav-links a {
+        margin-left: 0;
+        font-size: 0.9rem;
+        font-weight: 500;
+    }
+    
+    .hero h1 {
+        font-size: 1.8rem; /* මොබයිල් එකේදී පෙනෙන ප්‍රමාණය */
+        padding: 0 10px;
+    }
+
+    .hero p {
+        font-size: 1rem;
+        padding: 0 15px;
+    }
+}
 

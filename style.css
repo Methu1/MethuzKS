@@ -117,3 +117,31 @@ footer { background: #1a1a1a; text-align: center; padding: 30px; margin-top: 50p
     letter-spacing: 1px;
 }
 
+/* මොබයිල් ෆෝන් සඳහා විශේෂ වෙනස්කම් */
+@media (max-width: 600px) {
+    nav {
+        flex-direction: column; /* උඩ යට පේළියට සැකසීම */
+        padding: 15px;
+        text-align: center;
+    }
+
+    .logo-container {
+        margin-bottom: 10px; /* ලෝගෝ එක සහ ලින්ක් අතර පරතරය */
+    }
+
+    .nav-links {
+        display: flex;
+        justify-content: center;
+        gap: 15px; /* ලින්ක් අතර පරතරය */
+        margin-left: 0;
+    }
+
+    .nav-links a {
+        margin-left: 0;
+        font-size: 0.9rem; /* අකුරු පොඩ්ඩක් කුඩා කිරීම */
+    }
+    
+    .hero h1 {
+        font-size: 1.8rem; /* මොබයිල් එකේදී පෙනෙන ප්‍රමාණය */
+    }
+}

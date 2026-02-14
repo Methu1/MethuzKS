@@ -89,7 +89,6 @@ nav {
 .video-info { padding: 20px; }
 .video-info h3 { color: #ff0000; }
 
-
 footer { background: #1a1a1a; text-align: center; padding: 30px; margin-top: 50px; }
 
 /* Logo සහ Photo එක එක පෙළට තැබීම */
@@ -115,8 +114,10 @@ footer { background: #1a1a1a; text-align: center; padding: 30px; margin-top: 50p
     font-weight: 700;
     color: #ff0000;
     letter-spacing: 1px;
-
-    nav {
+}
+/* මොබයිල් ෆෝන් සඳහා විශේෂ වෙනස්කම් */
+@media (max-width: 600px) {
+    nav{
         flex-direction: column; /* උඩ යට පේළියට සැකසීම */
         padding: 15px;
         text-align: center;
@@ -181,3 +182,84 @@ footer { background: #1a1a1a; text-align: center; padding: 30px; margin-top: 50p
     }
 }
 
+body {
+        margin: 0;
+        padding: 0;
+        color: white;
+        font-family: 'Poppins', sans-serif;
+        background-color: #000; /* පින්තූරය එනකන් කළු පාටට තියෙයි */
+        overflow-x: hidden;
+    }
+
+    /* පසුබිම් පින්තූරය සියලුම තිර වලට ගැලපෙන සේ සැකසීම */
+    .video-bg {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        /* පින්තූරය සහ එය මදක් අඳුරු කරන overlay එක */
+        background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                    url('kena.jpg');
+        
+        /* පින්තූරය Fix කරන ප්‍රධාන Properties */
+        background-size: cover;           /* මුළු තිරයම පිරෙන සේ සකසයි */
+        background-position: center center; /* හැමවිටම මැදින් පෙන්වයි */
+        background-repeat: no-repeat;
+        
+        /* Blur කිරීමේ සැකසුම් */
+        filter: blur(10px);
+        transform: scale(1.1); /* Blur එක නිසා දාරවල සුදු ගතිය නැති කිරීමට */
+        z-index: -1;
+    }
+
+    .video-page-container {
+        position: relative;
+        z-index: 1; /* පසුබිමට උඩින් පෙන්වීමට */
+        padding: 50px 20px;
+        text-align: center;
+        min-height: 100vh;
+    }
+
+    .video-grid {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        flex-wrap: wrap;
+        margin-top: 40px;
+    }
+
+    .video-card {
+        background: rgba(20, 20, 20, 0.85);
+        padding: 20px;
+        border-radius: 15px;
+        border: 2px solid #ff0000;
+        width: 100%;
+        max-width: 500px;
+        backdrop-filter: blur(5px);
+        box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    }
+
+    iframe {
+        width: 100%;
+        height: 280px;
+        border-radius: 10px;
+        border: none;
+    }
+
+    .back-btn {
+        display: inline-block;
+        margin-top: 40px;
+        padding: 12px 30px;
+        background: #ff0000;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+        font-weight: bold;
+        transition: 0.3s;
+    }
+    
+    .back-btn:hover {
+        background: #cc0000;
+        transform: scale(1.05);
+    }

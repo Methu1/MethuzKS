@@ -263,3 +263,28 @@ body {
         background: #cc0000;
         transform: scale(1.05);
     }
+body {
+    /* Replace with your actual image path */
+    background-image: url('your-background-image.jpg'); 
+    
+    /* This ensures the image covers the entire area */
+    background-size: cover;
+    
+    /* This keeps the image centered */
+    background-position: center;
+    
+    /* This prevents the image from repeating if the page is long */
+    background-repeat: no-repeat;
+    
+    /* This keeps the background fixed so it doesn't scroll with the content */
+    background-attachment: fixed;
+    
+    /* Optional: ensures the body takes up the full height of the viewport */
+    min-height: 100vh;
+}
+@media (max-width: 768px) {
+    body {
+        /* On mobile, fixed attachment can sometimes cause lag or zoom issues */
+        background-attachment: scroll;
+    }
+}

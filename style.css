@@ -303,31 +303,41 @@ body {
 /* --- Mobile Responsive Fix (Add to the very bottom) --- */
 
 @media (max-width: 768px) {
-    /* පසුබිම් පින්තූරය Mobile එකේදී zoom වීම වැළැක්වීමට */
-    .video-bg {
-        background-attachment: scroll !important;
-        transform: scale(1.0); 
-    }
-
-    /* වීඩියෝ කාඩ් එක යට එක වැටීමට සහ මැදට ගැනීමට */
+    /* එක කාඩ් එකක් සහ අනෙක් කාඩ් එකක් අතර පරතරය වැඩි කිරීමට */
     .video-grid {
         display: flex !important;
         flex-direction: column !important;
-        align-items: center !important;
-        gap: 25px;
+        gap: 40px !important; /* පරතරය වැඩි කළා */
         padding: 0 15px;
     }
 
-    /* කාඩ් එකේ පළල Phone එකේ screen එකට fit කිරීම */
     .video-card {
         width: 100% !important;
-        max-width: 400px; /* ගොඩක් පළල වැඩි වීම වැළැක්වීමට */
-        margin: 0 auto;
+        max-width: 100%;
+        margin-bottom: 20px; /* යටින් ඉඩ තැබීම */
     }
+
+    /* අකුරු එක උඩ එක වැටීම වැළැක්වීමට */
+    .video-info h3 {
+        font-size: 1.1rem !important;
+        line-height: 1.4;
+        margin-bottom: 10px;
+    }
+
+    .video-info p {
+        font-size: 0.9rem !important;
+        line-height: 1.5;
+    }
+
+    /* වීඩියෝ එකේ උස Phone එකට ගැලපෙන සේ සකස් කිරීම */
+    .video-wrapper {
+        padding-bottom: 56.25% !important; /* 16:9 ratio */
+    }
+}
 
     /* වීඩියෝ එකේ උස ප්‍රමාණය නිවැරදි කිරීම */
     iframe {
-        height: 210px !important;
+        height: 180px !important;
         width: 100% !important;
     }
 
@@ -347,4 +357,5 @@ body {
         font-size: 1.6rem !important;
     }
 }
+
 

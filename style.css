@@ -1,3 +1,4 @@
+/* --- 1. Global Styles (පොදු සැකසුම්) --- */
 * {
     margin: 0;
     padding: 0;
@@ -6,11 +7,31 @@
 }
 
 body {
-    background-color: #0f0f0f;
+    background-color: #000;
     color: white;
     line-height: 1.6;
+    overflow-x: hidden;
+    min-height: 100vh;
 }
 
+/* --- 2. Background Image (පසුබිම් පින්තූරය) --- */
+.video-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('kena.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    filter: blur(10px);
+    transform: scale(1.1);
+    z-index: -1;
+}
+
+/* --- 3. Navigation Bar (මෙනුව) --- */
 nav {
     background-color: #1a1a1a;
     padding: 1rem 5%;
@@ -23,10 +44,26 @@ nav {
     border-bottom: 2px solid #ff0000;
 }
 
-.logo {
-    font-size: 1.5rem;
-    font-weight: bold;
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.nav-profile-img {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #ff0000;
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+}
+
+.logo-text {
+    font-size: 1.4rem;
+    font-weight: 700;
     color: #ff0000;
+    letter-spacing: 1px;
     text-transform: uppercase;
 }
 
@@ -34,11 +71,17 @@ nav {
     color: white;
     text-decoration: none;
     margin-left: 20px;
+    transition: 0.3s;
 }
 
+.nav-links a:hover {
+    color: #ff0000;
+}
+
+/* --- 4. Hero Section & Buttons --- */
 .hero {
     height: 60vh;
-    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1552820728-8b83bb6b773f?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1552820728-8b83bb6b773f?q=80&w=1470&auto=format&fit=crop');
     background-size: cover;
     background-position: center;
     display: flex;
@@ -52,7 +95,7 @@ nav {
     background: linear-gradient(45deg, #f00, #c00);
     color: #fff;
     padding: 12px 30px;
-    border-radius: 70px;
+    border-radius: 50px;
     display: inline-block;
     font: bold 14px 'Poppins', sans-serif;
     text-transform: uppercase;
@@ -60,306 +103,134 @@ nav {
     text-decoration: none;
     transition: .3s;
     box-shadow: 0 4px 15px rgba(255,0,0,.4);
-    animation: pulse 2s infinite;
+    animation: pulse-red 2s infinite;
+    margin-top: 20px;
 }
 
 .subscribe-btn:hover {
     transform: scale(1.1);
-    background: linear-gradient(45deg, #c00, #f00);
-    box-shadow: 0 6px 20px rgba(255,0,0,.6);
 }
 
-@keyframes pulse {
-    0% { box-shadow: 0 0 0 0 rgba(255,0,0,.7); }
-    70% { box-shadow: 0 0 0 15px rgba(255,0,0,0); }
-    100% { box-shadow: 0 0 0 0 rgba(255,0,0,0); }
+@keyframes pulse-red {
+    0% { box-shadow: 0 0 0 0 rgba(255, 0, 0, 0.7); }
+    70% { box-shadow: 0 0 0 15px rgba(255, 0, 0, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(255, 0, 0, 0); }
 }
 
+/* --- 5. Video Content Section --- */
 .container {
     max-width: 1200px;
     margin: 50px auto;
     padding: 0 20px;
+    position: relative;
+    z-index: 1;
 }
 
 .video-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    display: flex;
+    justify-content: center;
     gap: 30px;
+    flex-wrap: wrap;
+    margin-top: 40px;
 }
 
 .video-card {
-    background: #1a1a1a;
+    background: rgba(20, 20, 20, 0.85);
+    padding: 20px;
     border-radius: 15px;
-    overflow: hidden;
+    border: 2px solid #ff0000;
+    width: 100%;
+    max-width: 500px;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    transition: 0.3s;
+}
+
+.video-card:hover {
+    transform: translateY(-5px);
 }
 
 .video-wrapper {
     position: relative;
     padding-bottom: 56.25%;
     height: 0;
+    overflow: hidden;
+    border-radius: 10px;
 }
 
 .video-wrapper iframe {
     position: absolute;
     top: 0; left: 0; width: 100%; height: 100%;
+    border: none;
 }
 
-.video-info { padding: 20px; }
-.video-info h3 { color: #ff0000; }
+.video-info { padding-top: 20px; }
+.video-info h3 { color: #ff0000; margin-bottom: 10px; }
 
-footer { background: #1a1a1a; text-align: center; padding: 30px; margin-top: 50px; }
-
-/* Logo සහ Photo එක එක පෙළට තැබීම */
-.logo-container {
-    display: flex;
-    align-items: center;
-    gap: 12px;
+/* --- 6. Footer & Back Button --- */
+footer {
+    background: #1a1a1a;
+    text-align: center;
+    padding: 30px;
+    margin-top: 50px;
 }
 
-/* Photo එක රවුම් කර පොඩි කිරීම */
-.nav-profile-img {
-    width: 42px;
-    height: 42px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 2px solid #ff0000; /* රතු පාට බෝඩරය */
-    box-shadow: 0 0 10px rgba(255, 0, 0, 0.5); /* ලස්සනට Glow වෙන්න */
+.back-btn {
+    display: inline-block;
+    margin-top: 40px;
+    padding: 12px 30px;
+    background: #ff0000;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: 0.3s;
 }
 
-/* Methuz KS අකුරු මෝස්තරය */
-.logo-text {
-    font-size: 1.4rem;
-    font-weight: 700;
-    color: #ff0000;
-    letter-spacing: 1px;
+.back-btn:hover {
+    background: #cc0000;
+    transform: scale(1.05);
 }
-/* මොබයිල් ෆෝන් සඳහා විශේෂ වෙනස්කම් */
-@media (max-width: 600px) {
-    nav{
-        flex-direction: column; /* උඩ යට පේළියට සැකසීම */
-        padding: 15px;
-        text-align: center;
-    }
 
-    .logo-container {
-        margin-bottom: 10px; /* ලෝගෝ එක සහ ලින්ක් අතර පරතරය */
-    }
-
-    .nav-links {
-        display: flex;
-        justify-content: center;
-        gap: 15px; /* ලින්ක් අතර පරතරය */
-        margin-left: 0;
-    }
-
-    .nav-links a {
-        margin-left: 0;
-        font-size: 0.9rem; /* අකුරු පොඩ්ඩක් කුඩා කිරීම */
-    }
-    
-    .hero h1 {
-        font-size: 1.8rem; /* මොබයිල් එකේදී පෙනෙන ප්‍රමාණය */
-    }
-}
-/* මෙන්න මේ පේළිය අනිවාර්යයෙන්ම තියෙන්න ඕනේ */
-@media (max-width: 600px) {
-    
+/* --- 7. Mobile Responsive (මොබයිල් සැකසුම්) --- */
+@media (max-width: 768px) {
     nav {
-        flex-direction: column; /* ලෝගෝ එකයි ලින්ක් ටිකයි උඩයි යටයි වැටෙනවා */
+        flex-direction: column;
         padding: 15px;
         text-align: center;
     }
 
-    .logo-container {
-        margin-bottom: 15px; /* ලෝගෝ එකයි මෙනු එකයි අතර පරතරය */
-        justify-content: center; /* ලෝගෝ එක මැදට ගැනීම */
-    }
+    .logo-container { margin-bottom: 15px; }
 
     .nav-links {
         display: flex;
         justify-content: center;
-        gap: 15px; 
-        margin-left: 0;
-        width: 100%; /* ලින්ක් ටික මැදට ගන්න උදව් වෙනවා */
+        gap: 15px;
+        width: 100%;
     }
 
     .nav-links a {
         margin-left: 0;
         font-size: 0.9rem;
-        font-weight: 500;
-    }
-    
-    .hero h1 {
-        font-size: 1.8rem; /* මොබයිල් එකේදී පෙනෙන ප්‍රමාණය */
-        padding: 0 10px;
     }
 
-    .hero p {
-        font-size: 1rem;
-        padding: 0 15px;
-    }
-}
-
-body {
-        margin: 0;
-        padding: 0;
-        color: white;
-        font-family: 'Poppins', sans-serif;
-        background-color: #000; /* පින්තූරය එනකන් කළු පාටට තියෙයි */
-        overflow-x: hidden;
-    }
-
-    /* පසුබිම් පින්තූරය සියලුම තිර වලට ගැලපෙන සේ සැකසීම */
     .video-bg {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        /* පින්තූරය සහ එය මදක් අඳුරු කරන overlay එක */
-        background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
-                    url('kena.jpg');
-        
-        /* පින්තූරය Fix කරන ප්‍රධාන Properties */
-        background-size: cover;           /* මුළු තිරයම පිරෙන සේ සකසයි */
-        background-position: center center; /* හැමවිටම මැදින් පෙන්වයි */
-        background-repeat: no-repeat;
-        
-        /* Blur කිරීමේ සැකසුම් */
-        filter: blur(10px);
-        transform: scale(1.1); /* Blur එක නිසා දාරවල සුදු ගතිය නැති කිරීමට */
-        z-index: -1;
-    }
-
-    .video-page-container {
-        position: relative;
-        z-index: 1; /* පසුබිමට උඩින් පෙන්වීමට */
-        padding: 50px 20px;
-        text-align: center;
-        min-height: 100vh;
+        background-attachment: scroll !important;
+        transform: scale(1.0);
     }
 
     .video-grid {
-        display: flex;
-        justify-content: center;
-        gap: 30px;
-        flex-wrap: wrap;
-        margin-top: 40px;
+        flex-direction: column;
+        align-items: center;
+        gap: 25px;
     }
 
     .video-card {
-        background: rgba(20, 20, 20, 0.85);
-        padding: 20px;
-        border-radius: 15px;
-        border: 2px solid #ff0000;
         width: 100%;
-        max-width: 500px;
-        backdrop-filter: blur(5px);
-        box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        max-width: 400px;
     }
 
-    iframe {
-        width: 100%;
-        height: 280px;
-        border-radius: 10px;
-        border: none;
-    }
+    iframe { height: 210px !important; }
 
-    .back-btn {
-        display: inline-block;
-        margin-top: 40px;
-        padding: 12px 30px;
-        background: #ff0000;
-        color: white;
-        text-decoration: none;
-        border-radius: 5px;
-        font-weight: bold;
-        transition: 0.3s;
-    }
-    
-    .back-btn:hover {
-        background: #cc0000;
-        transform: scale(1.05);
-    }
-    body {
-    /* Replace with your actual image path */
-    background-image: url('your-background-image.jpg'); 
-    
-    /* This ensures the image covers the entire area */
-    background-size: cover;
-    
-    /* This keeps the image centered */
-    background-position: center;
-    
-    /* This prevents the image from repeating if the page is long */
-    background-repeat: no-repeat;
-    
-    /* This keeps the background fixed so it doesn't scroll with the content */
-    background-attachment: fixed;
-    
-    /* Optional: ensures the body takes up the full height of the viewport */
-    min-height: 100vh;
+    .hero h1 { font-size: 1.8rem; padding: 0 10px; }
 }
-@media (max-width: 768px) {
-    body {
-        /* On mobile, fixed attachment can sometimes cause lag or zoom issues */
-        background-attachment: scroll;
-    }
-}
-/* --- Mobile Responsive Fix (Add to the very bottom) --- */
-
-@media (max-width: 768px) {
-    /* එක කාඩ් එකක් සහ අනෙක් කාඩ් එකක් අතර පරතරය වැඩි කිරීමට */
-    .video-grid {
-        display: flex !important;
-        flex-direction: column !important;
-        gap: 40px !important; /* පරතරය වැඩි කළා */
-        padding: 0 15px;
-    }
-
-    .video-card {
-        width: 100% !important;
-        max-width: 100%;
-        margin-bottom: 20px; /* යටින් ඉඩ තැබීම */
-    }
-
-    /* අකුරු එක උඩ එක වැටීම වැළැක්වීමට */
-    .video-info h3 {
-        font-size: 1.1rem !important;
-        line-height: 1.4;
-        margin-bottom: 10px;
-    }
-
-    .video-info p {
-        font-size: 0.9rem !important;
-        line-height: 1.5;
-    }
-
-    /* වීඩියෝ එකේ උස Phone එකට ගැලපෙන සේ සකස් කිරීම */
-    .video-wrapper {
-        padding-bottom: 56.25% !important; /* 16:9 ratio */
-    }
-}
-
-    /* වීඩියෝ එකේ උස ප්‍රමාණය නිවැරදි කිරීම */
-    iframe {
-        height: 273px !important;
-        width: 100% !important;
-    }
-
-    /* Navigation Menu එක එක යට එක ලස්සනට පෙන්වීමට */
-    nav {
-        flex-direction: column !important;
-        padding: 15px !important;
-    }
-
-    .nav-links {
-        margin-top: 10px;
-        gap: 15px !important;
-    }
-
-    /* Title එකේ size එක අඩු කිරීම */
-    h1 {
-        font-size: 1.6rem !important;
-    }
-

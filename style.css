@@ -49,12 +49,24 @@ nav {
 }
 
 .subscribe-btn {
-    background-color: #ff0000;
-    color: white;
+    background: linear-gradient(45deg, #f00, #c00);
+    color: #fff;
     padding: 12px 30px;
+    border-radius: 70px;
+    display: inline-block;
+    font: bold 14px 'Poppins', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
     text-decoration: none;
-    border-radius: 50px;
-    margin-top: 20px;
+    transition: .3s;
+    box-shadow: 0 4px 15px rgba(255,0,0,.4);
+    animation: pulse 2s infinite;
+}
+
+.subscribe-btn:hover {
+    transform: scale(1.1);
+    background: linear-gradient(45deg, #c00, #f00);
+    box-shadow: 0 6px 20px rgba(255,0,0,.6);
 }
 
 .container {
@@ -335,3 +347,4 @@ body {
         font-size: 1.6rem !important;
     }
 }
+

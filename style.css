@@ -69,6 +69,12 @@ nav {
     box-shadow: 0 6px 20px rgba(255,0,0,.6);
 }
 
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(255,0,0,.7); }
+    70% { box-shadow: 0 0 0 15px rgba(255,0,0,0); }
+    100% { box-shadow: 0 0 0 0 rgba(255,0,0,0); }
+}
+
 .container {
     max-width: 1200px;
     margin: 50px auto;
@@ -337,7 +343,7 @@ body {
 
     /* වීඩියෝ එකේ උස ප්‍රමාණය නිවැරදි කිරීම */
     iframe {
-        height: 180px !important;
+        height: 273px !important;
         width: 100% !important;
     }
 
@@ -356,6 +362,4 @@ body {
     h1 {
         font-size: 1.6rem !important;
     }
-}
-
 

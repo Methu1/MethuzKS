@@ -234,3 +234,15 @@ footer {
 
     .hero h1 { font-size: 1.8rem; padding: 0 10px; }
 }
+/* Section Title (Latest Gameplays) මැදට ගැනීමට */
+h2 {
+    color: #fff;
+    text-align: center; /* අකුරු මැදට කරයි */
+    margin: 40px 0; /* උඩ සහ යට පරතරය */
+    font-size: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+    width: 100%;
+}
+
